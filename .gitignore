@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-=======
 # Created by https://www.toptal.com/developers/gitignore/api/flutter,dart
 # Edit at https://www.toptal.com/developers/gitignore?templates=flutter,dart
 
 ### Dart ###
->>>>>>> master
+
 # See https://www.dartlang.org/guides/libraries/private-files
 
 # Files and directories created by pub
@@ -32,8 +30,6 @@ doc/api/
 
 .flutter-plugins
 .flutter-plugins-dependencies
-<<<<<<< HEAD
-=======
 
 ### Dart Patch ###
 # dotenv environment variables file
@@ -99,4 +95,3 @@ lib/generated_plugin_registrant.dart
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 
 # End of https://www.toptal.com/developers/gitignore/api/flutter,dart
->>>>>>> master
