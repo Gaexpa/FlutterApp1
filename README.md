@@ -1,9 +1,18 @@
 # FlutterApp1
 畢專
 =======
-# demo
+# 關於主線保護的分支設定
+啟用 merging之前必須pull request(Require a pull request befor merging)
 
-A new Flutter project.
+也就是主線合併之前必須pull request
+
+pull request包含：
+
+1.最低審核數：1個
+
+2.一旦pull request的支線有新commit，這個pull request會被視為舊的(stale)而被略過
+
+3.Code Owner必須審核(立夫)
 
 ## Getting Started
 
