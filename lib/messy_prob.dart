@@ -5,8 +5,6 @@ import 'package:image_picker/image_picker.dart';
 
 import 'dart:developer' as devtools;
 
-import 'package:intl/intl.dart';
-
 main() {
   runApp(MyApp());
 }
@@ -100,9 +98,9 @@ class _MyAppState extends State<MyApp> {
     recognitions = await Tflite.runModelOnImage(
         path: returnedImage.path,
         // required
-        imageMean: 127.5,
+        imageMean: 0,
         // defaults to 117.0
-        imageStd: 127.5,
+        imageStd: 1,
         // defaults to 1.0
         numResults: 2,
         // defaults to 5
@@ -139,9 +137,9 @@ class _MyAppState extends State<MyApp> {
     recognitions = await Tflite.runModelOnImage(
         path: returnedImage.path,
         // required
-        imageMean: 127.5,
+        imageMean: 0,
         // defaults to 117.0
-        imageStd: 127.5,
+        imageStd: 1,
         // defaults to 1.0
         numResults: 2,
         // defaults to 5
@@ -166,8 +164,8 @@ class _MyAppState extends State<MyApp> {
   /// 定義初始化載入的tflite model和label.txt...
   Future _tfLiteInit() async {
     String? res = await Tflite.loadModel(
-        model: "assets/model_unquant1.tflite",
-        labels: "assets/labels.txt",
+        model: "assets/models/RoomMobileNetV3_4.tflite",
+        labels: "assets/models/labels.txt",
         numThreads: 1,
         // defaults to 1
         isAsset: true,
