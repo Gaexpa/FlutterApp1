@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MainWrapper extends StatefulWidget {
-  const MainWrapper({super.key});
+  const MainWrapper({
+    super.key,
+    required this.navigationShell,
+  });
+
+  final StatefulNavigationShell navigationShell;
 
   @override
   State<MainWrapper> createState() => _MainWrapperState();
@@ -11,12 +17,19 @@ class _MainWrapperState extends State<MainWrapper> {
   /// 當下頁面index
   int _selectedIndex = 0;
 
+  /// 怎麼跳其他頁的方法
+  void _goToBranch(int index) {
+    widget.navigationShell.goBranch(index,
+        initialLocation: index == widget.navigationShell.currentIndex);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SizedBox(
         height: double.infinity,
         width: double.infinity,
+        child: widget.navigationShell,
       ),
       // _pages[_selectedIndex],
 
@@ -35,14 +48,13 @@ class _MainWrapperState extends State<MainWrapper> {
           setState(() {
             _selectedIndex = index;
           });
+          _goToBranch(_selectedIndex);
         },
 
         /// 各圖標
         items: [
           BottomNavigationBarItem(
-            icon: Icon(_selectedIndex == 0
-                ? Icons.home
-                : Icons.home_outlined),
+            icon: Icon(_selectedIndex == 0 ? Icons.home : Icons.home_outlined),
             label: '',
           ),
           BottomNavigationBarItem(
@@ -59,13 +71,10 @@ class _MainWrapperState extends State<MainWrapper> {
             icon: Icon(_selectedIndex == 3
                 ? Icons.sensor_occupied
                 : Icons.sensor_occupied_outlined),
-
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(_selectedIndex == 4
-                ? Icons.book
-                : Icons.book_outlined),
+            icon: Icon(_selectedIndex == 4 ? Icons.book : Icons.book_outlined),
             label: '',
           ),
         ],

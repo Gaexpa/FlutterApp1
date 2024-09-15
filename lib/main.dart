@@ -1,5 +1,6 @@
-import 'package:demo/pages/home.dart';
-import 'package:demo/pages/wrappers/%20cooler_wrapper.dart';
+import 'package:demo/navigations/app_navigation.dart';
+import 'package:demo/pages/home_page.dart';
+import 'package:demo/pages/wrappers/cooler_wrapper.dart';
 import 'package:demo/pages/wrappers/main_wrapper.dart';
 import 'package:flutter/material.dart';
 
@@ -17,9 +18,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: CoolerWrapper(),
+      routerConfig: AppNavigation.router,
     );
   }
 }
