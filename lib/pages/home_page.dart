@@ -27,6 +27,7 @@ class _HomePageState extends State<HomePage> {
         "assets/images/bg_test.jpg",
         fit: BoxFit.cover,
         width: double.infinity,
+        height: double.infinity,
       ),
     );
   }

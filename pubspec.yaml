@@ -67,6 +67,8 @@ flutter:
     - assets/models/
     - assets/icons/
     - assets/images/
+    - assets/images/level/
+    - assets/images/pet_option_box_png/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
