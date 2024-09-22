@@ -1,33 +1,33 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class PetOptionBoxButton extends StatelessWidget {
-  IconData buttonIcon;
+  var pngPath;
   VoidCallback callback;
 
   PetOptionBoxButton(
-    this.buttonIcon,
+    this.pngPath,
     this.callback,
   );
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+
     return Container(
       /// 長寬
-      width: 113,
-      height: 113,
+      width: (size.width-(20*3))/3,
+      height: (size.width-(20*3))/3,
       /// 外部間距
-      margin: EdgeInsets.all(5),
+      margin: EdgeInsets.only(left: 20, top: 20, right: 20, bottom: 0),
       /// 按鈕
       child: OutlinedButton(
         onPressed: callback,
-        child: Icon(buttonIcon, size: 40,),
         style: OutlinedButton.styleFrom(
           backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           side: BorderSide(width: 3, color: Colors.grey),
         ),
+        child: Image.asset(pngPath, height: 70,),
       ),
     );
   }

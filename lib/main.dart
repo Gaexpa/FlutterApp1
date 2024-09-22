@@ -19,7 +19,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      /// 把右上角的demo條藏起來
       debugShowCheckedModeBanner: false,
+      /// 設定router
       routerConfig: AppNavigation.router,
     );
   }
