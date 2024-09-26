@@ -34,50 +34,53 @@ class _MainWrapperState extends State<MainWrapper> {
       // _pages[_selectedIndex],
 
       /// 畫面下方三個選項
-      bottomNavigationBar: BottomNavigationBar(
-        /// 固定間距
-        type: BottomNavigationBarType.fixed,
+      bottomNavigationBar: SizedBox(
+        height: 60,
+        child: BottomNavigationBar(
+          /// 固定間距
+          type: BottomNavigationBarType.fixed,
 
-        /// 置中
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+          /// 置中
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
 
-        /// 頁面切換
-        currentIndex: _selectedIndex,
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-          _goToBranch(_selectedIndex);
-        },
+          /// 頁面切換
+          currentIndex: _selectedIndex,
+          onTap: (index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+            _goToBranch(_selectedIndex);
+          },
 
-        /// 各圖標
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(_selectedIndex == 0 ? Icons.home : Icons.home_outlined),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(_selectedIndex == 1 ? Icons.pets : Icons.pets_outlined),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(_selectedIndex == 2
-                ? Icons.camera_alt
-                : Icons.camera_alt_outlined),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(_selectedIndex == 3
-                ? Icons.sensor_occupied
-                : Icons.sensor_occupied_outlined),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(_selectedIndex == 4 ? Icons.book : Icons.book_outlined),
-            label: '',
-          ),
-        ],
+          /// 各圖標
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(_selectedIndex == 0 ? Icons.home : Icons.home_outlined),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(_selectedIndex == 1 ? Icons.pets : Icons.pets_outlined),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(_selectedIndex == 2
+                  ? Icons.camera_alt
+                  : Icons.camera_alt_outlined),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(_selectedIndex == 3
+                  ? Icons.sensor_occupied
+                  : Icons.sensor_occupied_outlined),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(_selectedIndex == 4 ? Icons.book : Icons.book_outlined),
+              label: '',
+            ),
+          ],
+        ),
       ),
     );
   }
