@@ -1,6 +1,7 @@
 import 'package:demo/pages/home_page.dart';
 import 'package:demo/pages/level/level_page.dart';
 import 'package:demo/pages/pet/pet_page.dart';
+import 'package:demo/pages/review/review_page.dart';
 import 'package:demo/pages/social/social_page.dart';
 import 'package:demo/pages/wrappers/main_wrapper.dart';
 import 'package:flutter/cupertino.dart';
@@ -24,6 +25,8 @@ class AppNavigation {
       GlobalKey<NavigatorState>(debugLabel: "shellLevel");
   static final _rootNavigatorSocial =
       GlobalKey<NavigatorState>(debugLabel: "shellSocial");
+  static final _rootNavigatorReview =
+      GlobalKey<NavigatorState>(debugLabel: "shellReview");
 
   /// Go Router 設定
   static final GoRouter router = GoRouter(
@@ -82,6 +85,7 @@ class AppNavigation {
                   })
             ],
           ),
+
           /// Branch Social
           StatefulShellBranch(
             navigatorKey: _rootNavigatorSocial,
@@ -91,6 +95,21 @@ class AppNavigation {
                   name: "Social",
                   builder: (context, state) {
                     return SocialPage(
+                      key: state.pageKey,
+                    );
+                  })
+            ],
+          ),
+
+          /// Branch Review
+          StatefulShellBranch(
+            navigatorKey: _rootNavigatorReview,
+            routes: [
+              GoRoute(
+                  path: "/review",
+                  name: "Review",
+                  builder: (context, state) {
+                    return ReviewPage(
                       key: state.pageKey,
                     );
                   })

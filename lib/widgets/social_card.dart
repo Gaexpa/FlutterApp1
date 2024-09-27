@@ -20,9 +20,12 @@ class SocialCard extends StatelessWidget {
         children: [
           /// 背景
           Positioned.fill(
-            child: Image.asset(
-              bgPath,
-              fit: BoxFit.cover,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(11),
+              child: Image.asset(
+                bgPath,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
 

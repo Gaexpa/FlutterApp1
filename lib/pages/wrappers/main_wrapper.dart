@@ -71,8 +71,8 @@ class _MainWrapperState extends State<MainWrapper> {
             ),
             BottomNavigationBarItem(
               icon: Icon(_selectedIndex == 3
-                  ? Icons.sensor_occupied
-                  : Icons.sensor_occupied_outlined),
+                  ? Icons.people_alt
+                  : Icons.people_alt_outlined),
               label: '',
             ),
             BottomNavigationBarItem(
